@@ -1,4 +1,4 @@
-import { Flex, Text, Image, Box, Container, Stack } from '@chakra-ui/react';
+import { Text, Box, Container, Stack, Heading } from '@chakra-ui/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 
@@ -50,19 +50,40 @@ export function Slider() {
           <SwiperSlide key={index}>
             <Box
               key={index}
-              height='6xl'
               position='relative'
               backgroundPosition='center'
               backgroundRepeat='no-repeat'
               backgroundSize='cover'
+              width='1240px'
+              height='450px'
               backgroundImage={`url(${card.image})`}
             >
-              <Container
-                size='container.lg'
-                height='450px'
-                position='relative'
-              >
-                <Stack></Stack>
+              <Container size='container.lg' height='450px' position='relative'>
+                <Stack
+                  spacing={6}
+                  w='full'
+                  maxW='lg'
+                  position='absolute'
+                  top='50%'
+                  transform='translate(0, -50%)'
+                >
+                  <Heading
+                    fontSize='48px'
+                    textAlign='center'
+                    fontWeight={700}
+                    color='#F5F8FA'
+                  >
+                    {card.title}
+                  </Heading>
+                  <Text
+                    fontSize='24px'
+                    textAlign='center'
+                    fontWeight={700}
+                    color='#DADADA'
+                  >
+                    {card.text}
+                  </Text>
+                </Stack>
               </Container>
             </Box>
           </SwiperSlide>
